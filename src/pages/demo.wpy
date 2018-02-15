@@ -7,7 +7,7 @@
         <view class="weui-cell__hd weui-cell__hd_in-select-after">
           <view class="weui-label">审核状态</view>
         </view>
-        <vew class="weui-cell__bd">
+        <view class="weui-cell__bd">
           <picker range="{{filters}}" value="{{filterIndex}}" @change="onFilterChange">
             <view class="weui-select weui-select_in-select-after">{{filters[filterIndex]}}</view>
           </picker>
