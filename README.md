@@ -1,6 +1,6 @@
 # 快速创建微信小程序
 
-介绍小程序编码所需的基本资源，不涉及 appId 的申请和应用发布。
+介绍小程序编码所需的基本资源，不涉及 appId 的申请和应用发布。
 
 ## 涉及到的工具/库
 
@@ -8,19 +8,19 @@
 2. [wepy框架](https://github.com/Tencent/wepy)
 3. [WeUI for 小程序](https://github.com/Tencent/weui-wxss/)
 
-参照 wepy 文档，可以快速创建一个种子项目，对 devtool 进行一些简单的配置，即可调试。
+参照 wepy 文档，可以快速创建一个种子项目，对 devtool 进行一些简单的配置，即可调试。
 
 ## wepy 带来对便利和麻烦
 
-devtool 和 WeUI 的设计目标是原生的小程序，wepy 的设计目标是优化小程序的代码组织，提供更现代化的 js 编程环境。所以这三个工具/库之间不是非常地匹配。
+devtool 和 WeUI 的设计目标是原生的小程序，wepy 的设计目标是优化小程序的代码组织，提供更现代化的 js 编程环境。所以这三个工具/库之间不是非常地匹配。
 
-devtool 提供构建和 wepy 提供的构建存在冲突，需要按照 wepy 文档对 devtool 进行一些配置。
+devtool 提供构建和 wepy 提供的构建存在冲突，需要按照 wepy 文档对 devtool 进行一些配置。
 
-WeUI 仅提供了样式文件，并没有按照 wepy 提供的方案对组件进行封装。要实现 WeUI 组件，需要书写 template 和 script 交互，并且需要注意 WeUI 例子中的 js 代码和 wepy 框架下的 js 代码的区别。
+WeUI 仅提供了样式文件，并没有按照 wepy 提供的方案对组件进行封装。要实现 WeUI 组件，需要书写 template 和 script 交互，并且需要注意 WeUI 例子中的 js 代码和 wepy 框架下的 js 代码的区别。
 
-wepy 在代码组织上参考了 vue，可以将模板、脚本、样式书写在同一个文件中，很多细节上也做了类 vue 的处理（事件绑定，props 等）。在修改 view model 上做了很多改进，这里的实现和 angular 比较类似，可以在事件处理函数中直接修改数据，无需调用 setData 方法，在其他地方修改 vm，需要显式用 $apply 方法来通知框架发生了 vm 变化。
+wepy 在代码组织上参考了 vue，可以将模板、脚本、样式书写在同一个文件中，很多细节上也做了类 vue 的处理（事件绑定，props 等）。在修改 view model 上做了很多改进，这里的实现和 angular 比较类似，可以在事件处理函数中直接修改数据，无需调用 setData 方法，在其他地方修改 vm，需要显式用 $apply 方法来通知框架发生了 vm 变化。
 
-wepy 的这些改进，有时会带来一些困扰。vue 的风格和 vue 的实现是完全两回事，开发者的 vue 知识不能安全地应用到这里。wepy 在原生小程序上做的封装，有时会让开发者在原生开发文档和 wepy 文档之间无所适从，在 wepy 框架下使用原生小程序 api 可能会带来意外的效果。我在学习 wepy 的第二天遇到了[这个问题](https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=2127667306&docid=000aeee8fa0ff8b934568d69e56400)，在此之前我认为 react 和 vue 我还掌握的不错。
+wepy 的这些改进，有时会带来一些困扰。vue 的风格和 vue 的实现是完全两回事，开发者的 vue 知识不能安全地应用到这里。wepy 在原生小程序上做的封装，有时会让开发者在原生开发文档和 wepy 文档之间无所适从，在 wepy 框架下使用原生小程序 api 可能会带来意外的效果。我在学习 wepy 的第二天遇到了[这个问题](https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=2127667306&docid=000aeee8fa0ff8b934568d69e56400)，在此之前我认为 react 和 vue 我还掌握的不错。
 
 ## redux 问题
 
