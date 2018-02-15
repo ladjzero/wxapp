@@ -1,0 +1,25 @@
+<template>
+  <page>
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">当前时间</view>
+        <view class="weui-cell__ft">{{time}}</view>
+      </view>
+    </view>
+    <view class="page__bd page__bd_spacing" style="padding-top:15px">
+      <button class="weui-btn" type="primary" @tap="basicGetTime">获取当前时间</button>
+    </view>
+  </page>
+</template>
+<script>
+  import wepy from 'wepy'
+  import { connect } from 'wepy-redux'
+  import { basicGetTime } from '../store/actions'
+
+  @connect({
+    time(state) { return state.basicRedux.time }
+  }, {
+    basicGetTime
+  })
+  export default class BasicRedux extends wepy.page {}
+</script>

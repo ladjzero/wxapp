@@ -1,0 +1,2 @@
+export const ASYNC_REDUX_GET_TIME = 'ASYNC_REDUX_GET_TIME'
+

@@ -1,0 +1,37 @@
+<style>
+.container {
+  padding: 24px;
+}
+
+.container button {
+  width: 100%;
+  margin-bottom: 12px;
+}
+</style>
+<template>
+  <view class="page">
+    <view class="weui-cells__title">状态管理和复杂页面</view>
+    <view class="weui-cells weui-cells_after-title">
+      <navigator class="weui-cell weui-cell_access" url="/pages/no-redux">
+        <view class="weui-cell__bd">No Redux</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" />
+      </navigator>
+      <navigator class="weui-cell weui-cell_access" url="/pages/basic-redux">
+        <view class="weui-cell__bd">Basic Redux</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" />
+      </navigator>
+      <navigator class="weui-cell weui-cell_access" url="/pages/async-redux">
+        <view class="weui-cell__bd">Async Redux</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" />
+      </navigator>
+      <navigator class="weui-cell weui-cell_access" url="/pages/demo">
+        <view class="weui-cell__bd">Demo</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" />
+      </navigator>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  export default class Page1 extends wepy.page {}
+</script>

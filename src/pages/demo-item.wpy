@@ -1,0 +1,18 @@
+<template>
+  <page>
+    id is {{id}}
+  </page>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class DemoItem extends wepy.page {
+    data = {
+      id: null
+    }
+
+    onLoad(opt) {
+      this.id = opt.id
+    }
+  }
+</script>

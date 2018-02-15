@@ -1,0 +1,43 @@
+<template>
+  <page>
+    <view class="weui-cells__title">同步获取</view>
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">当前时间</view>
+        <view class="weui-cell__ft">{{time}}</view>
+      </view>
+    </view>
+    <view class="page__bd page__bd_spacing" style="padding-top:15px">
+      <button class="weui-btn" type="primary" @tap="getTime">获取当前时间</button>
+    </view>
+    <view class="weui-cells__title">异步步获取</view>
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">当前时间</view>
+        <view class="weui-cell__ft">{{asyncTime}}</view>
+      </view>
+    </view>
+    <view class="page__bd page__bd_spacing" style="padding-top:15px">
+      <button class="weui-btn" type="primary" @tap="asyncGetTime">异步获取当前时间</button>
+    </view>
+  </page>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class NoRedux extends wepy.page {
+    data = {
+      time: 0,
+      asyncTime: 0
+    }
+    getTime() {
+      this.time = Date.now()
+    }
+    async asyncGetTime() {
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      this.asyncTime = Date.now()
+      // 异步更新需要调用 $apply 来显式通知框架
+      this.$apply()
+    }
+  }
+</script>
