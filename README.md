@@ -10,6 +10,16 @@
 
 参照 wepy 文档，可以快速创建一个种子项目，对 devtool 进行一些简单的配置，即可调试。
 
+## 如何运行
+
+```
+克隆该项目，工作路径切换到项目中
+npm install wepy -g
+npm install
+wepy build --watch
+用 devtool 创建小程序应用，目录选择该项目的 dist 目录
+```
+
 ## wepy 带来对便利和麻烦
 
 devtool 和 WeUI 的设计目标是原生的小程序，wepy 的设计目标是优化小程序的代码组织，提供更现代化的 js 编程环境。所以这三个工具/库之间不是非常地匹配。
